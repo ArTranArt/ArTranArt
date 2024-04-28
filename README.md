@@ -1,4 +1,6 @@
 ### Hi there 👋
+I'm a Big Data & Machine Learning student interested in process automation in general. 
+
 
 <!--
 **ArTranArt/ArTranArt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
