@@ -1,4 +1,4 @@
-![Date](https://github.com/ArTranArt/ArTranArt/actions/workflows/update-readme.yml/badge.svg)
+![Date](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
 
 ### Hi there 👋
 
