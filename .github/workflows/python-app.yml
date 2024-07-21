@@ -3,7 +3,7 @@ name: Update README
 on:
   schedule:
     - cron: '0 0 * * *'  # Exécute tous les jours à minuit
-  workflow_dispatch:
+  workflow_dispatch:   # Permet également d'exécuter le workflow manuellement depuis l'interface GitHub
 
 jobs:
   update-readme:
