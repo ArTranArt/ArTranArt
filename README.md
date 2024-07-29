@@ -1,5 +1,3 @@
-![Date](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
-
 ### Hi there 👋
 
 I'm a Big Data & Machine Learning student interested in process automation in general.
