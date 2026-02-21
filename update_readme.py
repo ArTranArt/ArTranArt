@@ -5,44 +5,43 @@ def update_year_progress():
     today = datetime.datetime.now()
     year = today.year
     start = datetime.datetime(year, 1, 1)
-    end = datetime.datetime(year + 1, 1, 1)
-    progress = (today - start) / (end - start)
+    next_year = datetime.datetime(year + 1, 1, 1)
+    progress = (today - start) / (next_year - start)
     percent = progress * 100
-    days_left = (end - today).days
+    days_left = (next_year - today).days
 
     # 2. Barre de progression
-    width = 20
-    filled = int(percent / (100 / width))
-    bar = "█" * filled + "░" * (width - filled)
+    bar = "█" * int(percent / 5) + "░" * (20 - int(percent / 5))
     
-    # 3. Le bloc complet
+    # 3. Préparation du bloc
     start_tag = ""
     end_tag = ""
-    
-    content_to_insert = (
-        f"{start_tag}\n"
+    new_content = (
         f"### 🗓️ {year} Year Progress\n"
         f"`{bar}` {percent:.2f}%\n\n"
-        f"⏳ **{days_left}** days left until {year + 1}!\n"
-        f"{end_tag}"
+        f"⏳ **{days_left}** days left until {year + 1}!"
     )
 
-    # 4. Lecture et Remplacement
+    # 4. Reconstruction du fichier
     with open("README.md", "r", encoding="utf-8") as f:
-        readme_content = f.read()
+        lines = f.readlines()
 
-    # Si les balises existent, on remplace tout le bloc (balises incluses)
-    if start_tag in readme_content and end_tag in readme_content:
-        import re
-        # On utilise une regex simple pour remplacer tout ce qui est entre les balises, balises incluses
-        pattern = f"{start_tag}.*?{end_tag}"
-        new_content = re.sub(pattern, content_to_insert, readme_content, flags=re.DOTALL)
-        
-        with open("README.md", "w", encoding="utf-8") as f:
-            f.write(new_content)
-        print(f"✅ Success! Progress: {percent:.2f}%")
-    else:
-        print("❌ Error: Tags not found in README.md")
+    final_lines = []
+    skip = False
+    
+    for line in lines:
+        if start_tag in line:
+            final_lines.append(line) # Garde la balise de début
+            final_lines.append(f"\n{new_content}\n\n") # Insère le contenu
+            skip = True # Ignore tout ce qu'il y avait avant jusqu'à la fin
+        elif end_tag in line:
+            final_lines.append(line) # Garde la balise de fin
+            skip = False
+        elif not skip:
+            final_lines.append(line)
+
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.writelines(final_lines)
 
 if __name__ == "__main__":
     update_year_progress()
