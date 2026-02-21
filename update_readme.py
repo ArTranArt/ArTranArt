@@ -14,7 +14,7 @@ def update_year_progress():
     # 2. Génération du texte de la barre (Style Badge SVG dynamique)
     percent_int = int(percent) # geps.dev utilise des nombres entiers
     progress_text = (
-        f"Here is my homeday daytime counter before next year ⏳ **{days_left}** days left until {year + 1}. ![Year Progress](https://geps.dev/progress/{percent_int})\n\n"
+        f"⏳ **{days_left}** days left until {year + 1} ![Year Progress](https://geps.dev/progress/{percent_int})\n\n"
     )
 
     # 3. Lecture du TEMPLATE (qui est toujours propre)

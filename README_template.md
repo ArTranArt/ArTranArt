@@ -4,3 +4,4 @@
 > I leverage AI as a force multiplier to accelerate learning, solve problems, and deliver results.
 
 {progress_bar}
+
