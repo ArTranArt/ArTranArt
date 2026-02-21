@@ -17,7 +17,7 @@ def update_year_progress():
 
     # Génération du texte avec la phrase de motivation ET le footer de mise à jour
     progress_text = (
-        f"⏳ **{days_left}** days left until {year + 1}. Let's make every day count! 🚀 ![Year Progress](https://geps.dev/progress/{percent_int})\n\n"
+        f"⏳ **{days_left}** days left until {year + 1}. Let's make every day count! 🚀\n\n"
         f"<br><br>\n" # On saute des lignes pour aérer
         f"<p align='right'><sub>Dynamically updated via GitHub Actions</sub></p>"
     )
