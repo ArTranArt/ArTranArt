@@ -1,23 +1,7 @@
 ### Hi 👋 I'm Arthur
+## Data & AI Engineer
+> Driven by a scientific mindset: I experiment, analyze, and iterate. 
+> I leverage AI as a force multiplier to accelerate learning, solve problems, and deliver results.
 
-Driven by a scientific mindset: I experiment, analyze, and iterate. I leverage AI as a force multiplier to accelerate learning, solve problems, and deliver results.
-
-## 🤖 Data & AI Engineer
-
-> Driven by a scientific mindset: I experiment, analyze, and iterate. I leverage AI as a force multiplier to accelerate learning, solve problems, and deliver results.
-
-
-<!--
-**ArTranArt/ArTranArt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 🗓️ {current_year} Year Progress
+![Year Progress](https://geps.dev/progress/{percent})
