@@ -1,6 +1,11 @@
-### Hi there 👋
+### Hi 👋 I'm Arthur
 
-I'm a Big Data & Machine Learning student interested in process automation in general.
+Driven by a scientific mindset: I experiment, analyze, and iterate. I leverage AI as a force multiplier to accelerate learning, solve problems, and deliver results.
+
+## 🤖 Data & AI Engineer
+
+> Driven by a scientific mindset: I experiment, analyze, and iterate. I leverage AI as a force multiplier to accelerate learning, solve problems, and deliver results.
+
 
 <!--
 **ArTranArt/ArTranArt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
