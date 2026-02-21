@@ -1,26 +1,29 @@
-name: Update README Profile
+name: Update README Progress
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Se lance tous les jours à minuit
-  workflow_dispatch:     # Te permet de le lancer à la main pour tester
+    - cron: "0 0 * * *" # S'exécute tous les jours à minuit
+  workflow_dispatch: # Permet de le lancer manuellement pour tester
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout du code
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Install Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.x"
 
       - name: Run update script
-        run: python update_readme.py
+        run: python ton_nom_de_script.py # <-- Remplace par le nom de ton fichier .py
 
-      - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Mise à jour automatique du README"
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update year progress bar" || exit 0
+          git push
