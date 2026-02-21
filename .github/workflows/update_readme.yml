@@ -18,7 +18,7 @@ jobs:
           python-version: "3.x"
 
       - name: Run update script
-        run: python ton_nom_de_script.py # <-- Remplace par le nom de ton fichier .py
+        run: python update_readme.py
 
       - name: Commit and push changes
         run: |
