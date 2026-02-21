@@ -1,5 +1,4 @@
 import datetime
-import re
 
 def update_year_progress():
     # 1. Calculs
@@ -12,36 +11,28 @@ def update_year_progress():
     percent = progress * 100
     days_left = (next_year - today).days
 
-    # 2. Génération de la barre
-    bar = "█" * int(percent / 5) + "░" * (20 - int(percent / 5))
-    
-    # 3. Le NOUVEAU bloc (qui contient les balises pour pouvoir être remplacé demain)
-    new_block = (
-        "\n"
-        f"### 🗓️ {year} Year Progress\n"
-        f"`{bar}` {percent:.2f}%\n\n"
-        f"⏳ **{days_left}** days left until {year + 1}!\n"
-        ""
+    # 2. Génération du texte de la barre (Style Badge SVG dynamique)
+    percent_int = int(percent) # geps.dev utilise des nombres entiers
+    progress_text = (
+        f"Here is my homeday daytime counter before next year ⏳ **{days_left}** days left until {year + 1}. ![Year Progress](https://geps.dev/progress/{percent_int})\n\n"
     )
 
-    # 4. Lecture
-    with open("README.md", "r", encoding="utf-8") as f:
-        content = f.read()
+    # 3. Lecture du TEMPLATE (qui est toujours propre)
+    try:
+        with open("README_template.md", "r", encoding="utf-8") as f:
+            template = f.read()
+    except FileNotFoundError:
+        print("❌ Erreur : Le fichier README_template.md n'existe pas.")
+        return
 
-    # 5. Remplacement dynamique (écrase l'ancien bloc par le nouveau)
-    # Le re.DOTALL est la magie qui permet de sélectionner sur plusieurs lignes
-    new_content = re.sub(
-        r".*?", 
-        new_block, 
-        content, 
-        flags=re.DOTALL
-    )
+    # 4. Remplacement du mot clé et création du NOUVEAU fichier
+    final_readme = template.replace("{progress_bar}", progress_text)
 
-    # 6. Sauvegarde
+    # 5. Écrasement total du README.md
     with open("README.md", "w", encoding="utf-8") as f:
-        f.write(new_content)
+        f.write(final_readme)
         
-    print(f"✅ Mise à jour dynamique réussie : {percent:.2f}%")
+    print(f"✅ README généré à neuf avec succès : {percent:.2f}% (Badge: {percent_int}%)")
 
 if __name__ == "__main__":
     update_year_progress()
