@@ -23,7 +23,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/artranart/)
 
-⏳ **293** days left until 2027. Let's make every day count! 🚀
+⏳ **292** days left until 2027. Let's make every day count! 🚀
 
 <br><br>
 <p align='right'><sub>Dynamically updated via GitHub Actions</sub></p>
